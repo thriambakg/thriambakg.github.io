@@ -57,7 +57,7 @@ The interface is a dashboard for composing a research surface, full search pages
 
 Infrastructure is serverless AWS — Lambda, SQS/SNS, Step Functions, OpenSearch, Cognito, CloudFront — with Glue for scheduled large data flows. Terraform modules and GitHub Actions are shared with the base-infrastructure repo so the next service is reuse, not a fork.
 
-### RDI — Remote Drone Infrastructure
+### RDI — Remote Drone Interfaces
 
 **Code:** [RDI-1.0](https://github.com/thriambakg/RDI-1.0) · [RDI-Base-Infra](https://github.com/thriambakg/RDI-Base-Infra) · [RDI-Pipelines](https://github.com/thriambakg/RDI-Pipelines)
 

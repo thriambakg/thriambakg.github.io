@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinGov case study — Thriambak Giriprakash</title>
+  <meta name="description" content="How FinGov became one research practice for SEC filings, contracts, Congress, lobbying, and trades. A product design case study by Thriambak Giriprakash.">
+  <meta name="author" content="Thriambak Giriprakash">
+  <meta name="theme-color" content="#121613">
+  <link rel="canonical" href="https://thriambakg.github.io/fingov-case-study.html">
+  <meta property="og:title" content="FinGov — designing a research workspace for following the money">
+  <meta property="og:description" content="Product design case study: fragmented public data, one workspace, and an assistant that only sees what you attach.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thriambakg.github.io/fingov-case-study.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#overview">Skip to case study</a>
+  <div class="layout">
+    <aside class="rail">
+      <div>
+        <div class="mark" aria-hidden="true">Tg</div>
+        <h1>Thriambak Giriprakash</h1>
+        <p class="role">Software · Cloud · AI</p>
+        <p class="now">FinGov case study. Solo design and engineering, from side project to a live research platform.</p>
+      </div>
+      <nav class="nav" aria-label="Page">
+        <a href="index.html">Portfolio</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#work">Work</a>
+        <a href="fingov-case-study.html" aria-current="page">Case study</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="rail-links">
+        <a href="https://fingov.ai">fingov.ai</a>
+        <a href="mailto:Thriambak.g@gmail.com">Thriambak.g@gmail.com</a>
+        <a href="https://www.linkedin.com/in/thriambakg/" rel="me">LinkedIn</a>
+        <a href="https://github.com/thriambakg" rel="me">GitHub</a>
+      </div>
+    </aside>
+
+    <main class="study">
+      <p class="kicker">Product design case study</p>
+      <p class="lede">Designing a research workspace for following the money.</p>
+      <ul class="meta-row">
+        <li><strong>Product</strong> · <a href="https://fingov.ai">fingov.ai</a></li>
+        <li><strong>Role</strong> · Solo product designer and engineer</li>
+        <li><strong>Timeline</strong> · Side project to live platform</li>
+      </ul>
+      <p class="note">Public product. Indexing and collection internals stay high level.</p>
+      <ul class="toc">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#constraints">Constraints</a></li>
+        <li><a href="#exploration">What I cut</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#ui">Final UI</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+      </ul>
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>FinGov is a government and financial research platform I designed and built alone. It started as a tool for investors who wanted decisions grounded in SEC filings, news, and market data. Following capital from markets into government spending pulled the product toward transparency: contracts, congressional trading, lobbying, campaign contributions, and related disclosures. Still one workspace, with an AI assistant that only sees what the user attaches.</p>
+        <p>The design problem was not “add another search box.” It was how to make fragmented public data feel like one research practice — find, save, analyze — without drowning non-experts in filters or forcing power users into a toy UI.</p>
+      </section>
+
+      <section id="problem">
+        <h2>The problem</h2>
+        <h3>Who had it</h3>
+        <p>Early users were people trying to make data-backed investment connections. Filings, news, and price trends were necessary and incomplete. The useful trail kept pointing at government: who got the contract, who traded the stock, who lobbied whom.</p>
+        <p>Before FinGov, each source lived on its own site, in its own vocabulary.</p>
+        <div class="flow" aria-label="Before FinGov, sources reached the user separately">
+          <div class="flow-stack">
+            <span class="node">EDGAR / SEC</span>
+            <span class="node">USAspending</span>
+            <span class="node">LDA / lobbying</span>
+            <span class="node">Trade disclosures</span>
+            <span class="node">News sites</span>
+            <span class="node">Notes / ChatGPT</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">User</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node ink">Mental model held across tabs</span>
+        </div>
+        <p>Users pasted fragments into notes or a generic chatbot that had no durable link to the filing, award, or bill. Context evaporated between sessions.</p>
+        <h3>What I knew going in</h3>
+        <p>I knew the workflow because I was designing for the same job I was doing: following money until the trail crossed agency boundaries. Later demos with people in local politics confirmed a sharper version of the problem. Many were not already fluent in how tax dollars and influence actually move. Speed of lookup mattered. Legibility of the system mattered more.</p>
+      </section>
+
+      <section id="goals">
+        <h2>Goals</h2>
+        <ol>
+          <li>One workspace for the market and government sources that matter to “follow the money.”</li>
+          <li>A path from discovery, to deep search, to durable files, to AI analysis on selected context.</li>
+          <li>Interfaces that stay usable for curious non-experts and for heavy filter users.</li>
+          <li>Ship and operate as a solo builder. Every interaction had to be maintainable on real APIs and AWS constraints.</li>
+        </ol>
+      </section>
+
+      <section id="constraints">
+        <h2>Constraints</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Constraint</th><th>How it shaped design</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Solo ownership of frontend, backend, devops, AI, and security</td>
+                <td>Prefer patterns I could learn and operate. Reuse over one-off infrastructure.</td>
+              </tr>
+              <tr>
+                <td>AI-assisted development for speed</td>
+                <td>I still owned the vision and the reuse, including one DynamoDB Terraform module across tables.</td>
+              </tr>
+              <tr>
+                <td>Heterogeneous APIs</td>
+                <td>Search had to respect batch zip indexes, on-demand calls, and scraping.</td>
+              </tr>
+              <tr>
+                <td>Rate limits and formats</td>
+                <td>Coverage notes, progress states, and honest “what’s searchable” copy in the UI.</td>
+              </tr>
+              <tr>
+                <td>Latency on growing indexes</td>
+                <td>Targeted per-source search instead of an early open search across everything.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="map">
+          <article>
+            <h3>Solo capacity</h3>
+            <ul>
+              <li>Progressive disclosure and Easy Mode</li>
+              <li>Polling instead of WebSockets</li>
+            </ul>
+          </article>
+          <article>
+            <h3>API reality</h3>
+            <ul>
+              <li>A search page per source</li>
+              <li>Honest coverage banners</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Latency and cost</h3>
+            <ul>
+              <li>Cut broad cross-corpus search early</li>
+              <li>Keep search targeted per source</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="exploration">
+        <h2>Directions I rejected</h2>
+        <p>The interesting work was not the final screens. It was the forks that did not ship, or shipped only partly.</p>
+        <ul class="forks">
+          <li><span>Dashboard and side chat only</span><span class="why">Heavy search cramped in tiles</span><span>Full pages per integration</span></li>
+          <li><span>Dashboard and side chat only</span><span class="why">Keep for overview</span><span>Tiles and ambient chat</span></li>
+          <li><span>Right-click to add context</span><span class="why">Too hidden or slow</span><span>Drag objects into chat</span></li>
+          <li><span>Open text search across all sources</span><span class="why">Too slow as indexes grew</span><span>Targeted search per source</span></li>
+          <li><span>Targeted search per source</span><span class="why">Revisit as the catalog grows</span><span>Nearest-match fan-out, such as “Apple”</span></li>
+          <li><span>WebSockets or SSE for progress</span><span class="why">Infrastructure cost for one person</span><span>DynamoDB plus polling every 1–2 seconds</span></li>
+        </ul>
+
+        <h3>1. Workspace-only versus tiles and pages</h3>
+        <p>I wanted everything reachable from a customizable dashboard with a Cursor-like chat on the side. That model is excellent for ambient research. It failed for heavy search: filters, facets, and result tables need width and height that tiles cannot give.</p>
+        <div class="pair">
+          <p><strong>Cut.</strong> Tile-only deep search.</p>
+          <p><strong>Shipped.</strong> Dashboard for composition and monitoring. Dedicated pages when the work gets serious.</p>
+        </div>
+
+        <h3>2. Context attachment</h3>
+        <p>The early flow was right-click, then add to context. Precise, but easy to miss and slow in a multi-object session.</p>
+        <div class="pair">
+          <p><strong>Cut.</strong> Right-click as the primary path.</p>
+          <p><strong>Shipped.</strong> Drag filings and research objects into chat, so context feels like moving evidence onto the desk.</p>
+        </div>
+
+        <h3>3. Broad search versus targeted search</h3>
+        <p>A single open-text query across every index was attractive: “Apple” would return news, SEC filings, trades, and lobbying. I cut it in favor of per-source targeted search so response times stayed usable.</p>
+        <p>That tradeoff was right early. With many integrations live, nearest-match cross-source search is an intentional next step.</p>
+
+        <h3>4. How data arrives is a UX decision</h3>
+        <div class="map">
+          <article>
+            <h3>Batch or zip, then index</h3>
+            <ul><li>Coverage windows and freshness notes</li></ul>
+          </article>
+          <article>
+            <h3>On-demand API</h3>
+            <ul><li>Progress and polling states</li></ul>
+          </article>
+          <article>
+            <h3>Scrape where APIs fail</h3>
+            <ul><li>Fragile fields and incomplete rows</li></ul>
+          </article>
+        </div>
+        <p>Politician trades, for example, required scraping where APIs were inadequate. Users feel that as uneven richness. The design had to absorb inconsistency instead of pretending every source is EDGAR-quality.</p>
+      </section>
+
+      <section id="solution">
+        <h2>Information architecture</h2>
+        <div class="flow" aria-label="Core product surfaces">
+          <span class="node">Landing</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node ink">Dashboard</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">Search pages</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">Files</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">AI chat</span>
+        </div>
+        <p>The dashboard pins and monitors search, and opens chat. Search saves an object into Files or drags it into chat. Files attaches a folder or file to chat. Chat can save the analysis back to Files.</p>
+        <p><strong>Core loop:</strong> discover on the dashboard, deepen on a full search page, capture into Files, analyze in chat on attached context, and return to saved work later.</p>
+      </section>
+
+      <section id="ui">
+        <h2>Final UI</h2>
+        <p>Live product: <a href="https://fingov.ai">fingov.ai</a>. These screenshots are also used on the marketing landing page.</p>
+
+        <h3>1. Dashboard — compose a research surface</h3>
+        <figure>
+          <img src="images/fingov/DashboardPreview.png" alt="FinGov dashboard with tiles for politician trades, news, files, SEC search, and government contracts" width="1440">
+          <figcaption>Custom tiles for trades, news, folders, SEC, contracts, and more. This is the command center: overview and arrangement, not the place for the densest filters.</figcaption>
+        </figure>
+
+        <h3>2. Full search page — room to analyze</h3>
+        <figure>
+          <img src="images/fingov/ContractSearchPreview.png" alt="Government contracts search page with filters, a results table, and refine facets" width="1440">
+          <figcaption>Dedicated contracts search: basic and advanced filters, a results table, and refine facets. This layout exists because the tile experiment failed for serious queries. Coverage messaging, what is indexed versus what is historical on the source site, is part of the design.</figcaption>
+        </figure>
+
+        <h3>3. Files — durable evidence</h3>
+        <figure>
+          <img src="images/fingov/FilepagePreview.png" alt="Files page listing folders, uploads, news, contracts, and Congress bills as context items" width="1440">
+          <figcaption>Saved context and uploads — contracts, bills, news, SEC-related folders, .cosine artifacts — so research survives the browser tab that found it.</figcaption>
+        </figure>
+
+        <h3>4. AI chat — analysis on selected context</h3>
+        <figure>
+          <img src="images/fingov/ChatPreview.png" alt="AI chat analyzing an SEC Form 4 filing, with a chat history sidebar" width="1440">
+          <figcaption>Chat is grounded in what the user attached, not a generic market monologue. History, import, and session context make analysis a first-class artifact alongside Files.</figcaption>
+        </figure>
+
+        <h3>Context into chat</h3>
+        <ol class="steps">
+          <li>Run a targeted search.</li>
+          <li>Save the filing, award, or bill into Files.</li>
+          <li>Drag the object into a chat session. Context is bound to that session.</li>
+          <li>Ask for a summary, a comparison, or an explanation. The answer stays inside the attached objects.</li>
+          <li>Save the analysis back to Files.</li>
+        </ol>
+      </section>
+
+      <section id="ownership">
+        <h2>Ownership</h2>
+        <p>I owned problem framing, information architecture, UI, onboarding, and engineering end to end. There was no design team.</p>
+        <p>Research partners were users. I took shareable builds to local political meetings for both parties, demoed, and implemented feedback. One concrete outcome, a campaign contributions surface, came from a request by a campaign manager for my district’s House representative. Their identity stays anonymized here.</p>
+      </section>
+
+      <section id="outcomes">
+        <h2>What happened after people used it</h2>
+        <p>The first meaningful launch signal was not a dashboard metric. It was a live demo on an older machine with unstable internet.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Expectation</th><th>Observation</th><th>Design response</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Search would feel slow off good hardware</td>
+                <td>Search stayed surprisingly fast</td>
+                <td>Confirmed targeted indexing and per-source search</td>
+              </tr>
+              <tr>
+                <td>The layout would transfer fine</td>
+                <td>Pages felt cramped. Too many indexes and fields were visible</td>
+                <td>Shipped Easy Mode: common fields only, less visual noise. Advanced remains for power users</td>
+              </tr>
+              <tr>
+                <td>Political audiences already know the money map</td>
+                <td>Many did not</td>
+                <td>The product job expanded from faster lookup to making money flows legible</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flow" aria-label="What the first external demo changed">
+          <span class="node ink">First external demo</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">Search latency was fine</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">UI was too dense</span>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <span class="node">Easy Mode</span>
+        </div>
+        <p>The same demo showed that baseline literacy of money flows was lower than I expected, so the product is positioned as transparency and understanding, not only faster lookup.</p>
+        <p>I am not citing vanity marketing numbers as evidence. The validated learning was qualitative: density hurt first, mental models were weaker than expected, and Easy Mode plus contribution-oriented requests followed from real sessions.</p>
+      </section>
+
+      <section id="again">
+        <h2>If I did it again</h2>
+        <ol>
+          <li><strong>Map every integration before freezing search UX.</strong> Batch versus on-demand versus scrape, rate limits, and field completeness, so empty states and honesty banners are designed with the data.</li>
+          <li><strong>Draw the full source catalog earlier.</strong> Knowing the eventual surface area would have timed the return of cross-source open search better.</li>
+          <li><strong>Prototype simple versus advanced sooner.</strong> Easy Mode should have been a first-class information-architecture bet, not only a reaction to a cramped demo.</li>
+          <li><strong>Reintroduce nearest-match fan-out.</strong> “Apple” should surface news, filings, trades, and lobbying in one pass now that the catalog justifies it.</li>
+        </ol>
+      </section>
+
+      <section id="summary">
+        <h2>Summary</h2>
+        <p>FinGov is a case study in designing under fragmentation: many public sources, one research practice, solo delivery. The shipped system keeps a Cursor-inspired dashboard and chat, adds full pages where tiles failed, treats context as drag-and-drop evidence, and uses Easy Mode so transparency tools do not only serve experts. The cuts, especially early broad search, were deliberate performance choices I would partially reverse with a clearer map of integrations next time.</p>
+        <div class="links">
+          <a href="https://fingov.ai">fingov.ai</a>
+          <a href="https://github.com/thriambakg/Cosine2.0">Application repo</a>
+          <a href="index.html#work">Back to selected work</a>
+        </div>
+      </section>
+
+      <footer>
+        <p>Thriambak Giriprakash</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
