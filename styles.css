@@ -295,6 +295,11 @@ section h2 {
   margin: 0;
 }
 
+.live a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .project ul {
   margin: 16px 0;
   padding-left: 18px;

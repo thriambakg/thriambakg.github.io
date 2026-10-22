@@ -59,7 +59,7 @@ Infrastructure is serverless AWS — Lambda, SQS/SNS, Step Functions, OpenSearch
 
 ### RDI — Remote Drone Interfaces
 
-**Code:** [RDI-1.0](https://github.com/thriambakg/RDI-1.0) · [RDI-Base-Infra](https://github.com/thriambakg/RDI-Base-Infra) · [RDI-Pipelines](https://github.com/thriambakg/RDI-Pipelines)
+**In progress:** [rdistaging.com](https://rdistaging.com) · **Code:** [RDI-1.0](https://github.com/thriambakg/RDI-1.0) · [RDI-Base-Infra](https://github.com/thriambakg/RDI-Base-Infra) · [RDI-Pipelines](https://github.com/thriambakg/RDI-Pipelines)
 
 Low-latency global drone operation from a browser. The control plane is API Gateway, Lambda, DynamoDB, Cognito, and CloudFront. The data plane is WebRTC between the pilot’s browser and a Raspberry Pi CM4 relay in the field. Amazon Kinesis Video Streams carries signaling only. Commands, telemetry, and video stay on the peer connection after the session is up.
 
