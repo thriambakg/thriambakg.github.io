@@ -27,9 +27,12 @@ Jul 2024 – Present · Full-time
 - Eliminated cross-region infrastructure drift with Terraform and GitLab CI/CD (OIDC), keeping production, staging, and development in parity.
 - Integrated Bedrock with OpenSearch Serverless for RAG knowledge retrieval, cutting manual QA by 50%.
 
-### State Farm — Software Engineer Intern
+### State Farm — Software Engineer
 
-May 2022 – Aug 2023 · Part-time
+Aug 2022 – Jul 2023 · Part-time  
+May 2022 – Aug 2022 · Internship (Software Engineer Intern)
+
+Software Engineer Intern, May–Aug 2022, then part-time through July 2023.
 
 - Built and embedded personalized Amazon QuickSight dashboards on the department React page for 20+ users. Public sample: [EmbeddedDash](https://github.com/thriambakg/EmbeddedDash).
 - Deployed a Datadog resource-tracking dashboard to monitor AWS spend and usage.
