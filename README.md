@@ -35,7 +35,7 @@ May 2022 – Aug 2023 · Part-time
 - Deployed a Datadog resource-tracking dashboard to monitor AWS spend and usage.
 - Created reusable Terraform modules for repeated infrastructure, which shortened turnover for other developers.
 
-## Selected work
+## Project Experience
 
 ### FinGov — research workspace for following the money
 
