@@ -172,6 +172,12 @@ main {
   margin: 0;
 }
 
+.intro-lead {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
 .intro + .intro { margin-top: 12px; }
 
 .actions {

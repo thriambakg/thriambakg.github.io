@@ -4,7 +4,7 @@
 
 [Live portfolio](https://thriambakg.github.io) · [Resume](Thriambak_Giriprakash_Resume.pdf) · [Email](mailto:Thriambak.g@gmail.com) · [LinkedIn](https://www.linkedin.com/in/thriambakg/) · [GitHub](https://github.com/thriambakg) · [Medium](https://medium.com/@thriambak.g) · (309) 750-6190
 
-AWS-certified software engineer and founder with 4+ years of enterprise experience and two active ventures. I bridge cloud infrastructure and AI integrations with an MBA-level view of the product. I build scalable systems, from enterprise data pipelines to consumer-facing AI platforms.
+AWS-certified software engineer and hobbyist with 4+ years of enterprise experience and two active ventures. I bridge cloud infrastructure and AI integrations with an MBA-level view of the product. I build scalable systems, from enterprise data pipelines to consumer-facing AI platforms.
 
 Open to **software engineering, cloud, and AI engineering** roles.
 
