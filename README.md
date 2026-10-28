@@ -14,34 +14,26 @@ The page recruiters should open is [thriambakg.github.io](https://thriambakg.git
 
 | | |
 |---|---|
-| AI Engineer, State Farm | Jul 2026 – Present |
-| AWS Software Engineer II, State Farm | Jul 2024 – Present |
+| Software Engineer, State Farm | Jul 2024 – Present |
 
 ## Experience
 
-### State Farm — AI Engineer
-
-Jul 2026 – Present · Full-time
-
-- Architected a RAG chatbot on Amazon Q that answers incident questions with semantic search over code and docs, saving hours of manual triage.
-- Built GitLab CI/OIDC pipelines that sync five core repos and the team cookbook into its knowledge base.
-- Embedded the Q chat agent in a Vue/TypeScript web app so employees get answers that stay current.
-
-### State Farm — AWS Software Engineer II
+### State Farm — Software Engineer
 
 Jul 2024 – Present · Full-time
 
-- Architected Python/Lambda/Glue/SQS pipelines that ingest thousands of monthly XML policy files across regions, with automated validation. Tuned Glue ETL with AWS architects and mentored engineers through code review.
-- Eliminated backup-region drift with Terraform and GitLab CI/CD (OIDC), keeping production, staging, and development in parity.
-- Integrated Bedrock with OpenSearch Serverless for a RAG knowledge base, cutting manual QA by about 50% and speeding releases by more than a day.
+- Built a RAG chatbot on Amazon Q that keeps knowledge in sync across five GitLab repositories, and integrated it into an enterprise Vue/TypeScript application.
+- Architected Python/Lambda/Glue/SQS pipelines that process thousands of XML policy files each month, with faster ETL and 88% test coverage.
+- Eliminated cross-region infrastructure drift with Terraform and GitLab CI/CD (OIDC), keeping production, staging, and development in parity.
+- Integrated Bedrock with OpenSearch Serverless for RAG knowledge retrieval, cutting manual QA by 50%.
 
-### State Farm — Full Stack Software Engineering Intern
+### State Farm — Software Engineer Intern
 
 May 2022 – Aug 2023 · Part-time
 
 - Built and embedded personalized Amazon QuickSight dashboards on the department React page for 20+ users. Public sample: [EmbeddedDash](https://github.com/thriambakg/EmbeddedDash).
-- Deployed a Datadog dashboard for AWS spend and usage.
-- Created reusable Terraform modules for repeated objects, which shortened delivery for other developers.
+- Deployed a Datadog resource-tracking dashboard to monitor AWS spend and usage.
+- Created reusable Terraform modules for repeated infrastructure, which shortened turnover for other developers.
 
 ## Selected work
 
