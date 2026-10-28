@@ -23,7 +23,7 @@ The page recruiters should open is [thriambakg.github.io](https://thriambakg.git
 Jul 2024 – Present · Full-time
 
 - Built a RAG chatbot on Amazon Q that keeps knowledge in sync across five GitLab repositories, and integrated it into an enterprise Vue/TypeScript application.
-- Architected Python/Lambda/Glue/SQS pipelines that process thousands of XML policy files each month, with faster ETL and 88% test coverage.
+- Architected Python/Lambda/Glue/SQS pipelines that process thousands of XML policy files each month, with faster ETL and 88% test coverage. Write-up: [Writing unit tests with AI](https://medium.com/@thriambak.g/writing-unit-tests-with-ai-using-large-language-models-prompt-engineering-and-db5eb7da486b).
 - Eliminated cross-region infrastructure drift with Terraform and GitLab CI/CD (OIDC), keeping production, staging, and development in parity.
 - Integrated Bedrock with OpenSearch Serverless for RAG knowledge retrieval, cutting manual QA by 50%.
 
@@ -34,7 +34,7 @@ May 2022 – Aug 2022 · Internship (Software Engineer Intern)
 
 Software Engineer Intern, May–Aug 2022, then part-time through July 2023.
 
-- Built and embedded personalized Amazon QuickSight dashboards on the department React page for 20+ users. Public sample: [EmbeddedDash](https://github.com/thriambakg/EmbeddedDash).
+- Built and embedded personalized Amazon QuickSight dashboards on the department React page for 20+ users. Write-up: [Embedding an AWS QuickSight dashboard](https://medium.com/@thriambak.g/embedding-an-aws-quick-sight-dashboard-in-your-react-page-9147176598e8). Sample: [EmbeddedDash](https://github.com/thriambakg/EmbeddedDash).
 - Deployed a Datadog resource-tracking dashboard to monitor AWS spend and usage.
 - Created reusable Terraform modules for repeated infrastructure, which shortened turnover for other developers.
 
