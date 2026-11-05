@@ -22,7 +22,7 @@ The page recruiters should open is [thriambakg.github.io](https://thriambakg.git
 
 Jul 2024 – Present · Full-time
 
-- Built a RAG chatbot on Amazon Q that keeps knowledge in sync across five GitLab repositories, and integrated it into an enterprise Vue/TypeScript application.
+- Designed and engineered a self-service generative AI platform utilizing AWS Q that allows enterprise teams to instantly launch custom chat agents powered by automated, bucket-isolated knowledge dumps.
 - Architected Python/Lambda/Glue/SQS pipelines that process thousands of XML policy files each month, with faster ETL and 88% test coverage. Write-up: [Writing unit tests with AI](https://medium.com/@thriambak.g/writing-unit-tests-with-ai-using-large-language-models-prompt-engineering-and-db5eb7da486b).
 - Eliminated cross-region infrastructure drift with Terraform and GitLab CI/CD (OIDC), keeping production, staging, and development in parity.
 - Integrated Bedrock with OpenSearch Serverless for RAG knowledge retrieval, cutting manual QA by 50%.
